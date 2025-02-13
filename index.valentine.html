@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>just press meee</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffebee;
+      background-image: url('https://i.pinimg.com/originals/8e/1a/3b/8e1a3b6e5e84f3f8e3c9e0e249d6f8bb.jpg'); /* Cute cat background */
+      background-size: cover;
+      background-position: center;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+    }
+    h1 {
+      color: #e91e63;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .confession {
+      color: #333;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+    button:hover {
+      background-color: #c2185b;
+    }
+    .hidden {
+      display: none;
+    }
+    #confirmationMessage {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #e91e63;
+    }
+    .cat-gif {
+      margin-top: 20px;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>For you koomeh 💖🐱</h1>
+    <p class="confession">
+        <p>Hey koomehhh,</p>  
+        <p> actually i never thought a few ML matches would lead to this hahahah, but here we are. again... para sa akin, you’re more than just a great teammate. you’re someone i genuinely enjoy talking to. and somewhere between the ganks and wins, i caught feelings.</p>  
+        <p>sooooo, here’s my short confession for you: I like you. Will you be my Valentine? 🐾 and wanna duo in real life too?</p>  
+        <p>- joshhh</p>
+    </p>
+    <div class="buttons">
+      <button id="yesBtn">Yes! 💕</button>
+      <button id="noBtn">No 😢</button>
+    </div>
+    <div id="confirmationMessage" class="hidden">
+      <p>sounds forceful but i'll wait for your reply thru messenger meowwww 💌🐱</p>
+      <img src="https://media.tenor.com/F15e6hqDhKsAAAA1/cat-stare-boomer-cat.webp" alt="Cute Cat GIF" class="cat-gif">
+    </div>
+  </div>
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+    
+    yesBtn.addEventListener('click', () => {
+      confirmationMessage.classList.remove('hidden');
+      document.querySelector('.buttons').classList.add('hidden');
+    });
+    
+    noBtn.addEventListener('mouseover', () => {
+      if (!noBtn.moved) {
+        noBtn.moved = true;
+        return;
+      }
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 50);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 50);
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
